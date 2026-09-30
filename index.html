@@ -964,6 +964,72 @@
     font-weight: 600;
 }
     
+/* LIVRE D'OR */
+
+.guestbook {
+    padding: 70px 20px;
+    background: #fff;
+    text-align: center;
+}
+
+.guestbook h2 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.guestbook > p {
+    color: #777;
+    max-width: 500px;
+    margin: 0 auto 35px;
+}
+
+#guestbookForm {
+    max-width: 600px;
+    margin: auto;
+    text-align: left;
+}
+
+.guestbook-button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background: #222;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.guestbook-button:hover {
+    opacity: 0.85;
+}
+
+#guestbookMessages {
+    max-width: 600px;
+    margin: 40px auto 0;
+    text-align: left;
+}
+
+.guest-message {
+    background: #f8f6f2;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.guest-message strong {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.guest-message p {
+    margin: 0;
+    color: #555;
+    line-height: 1.6;
+}
+        
     </style>
 
 </head>
@@ -1376,6 +1442,49 @@
                 <option value="4">4 personnes</option>
                 <option value="5">5 personnes</option>
             </select>
+<section class="guestbook" id="livre-or">
+
+    <h2>Un mot pour les mariés</h2>
+
+    <p>
+        Laissez-nous un petit message pour accompagner
+        cette belle journée.
+    </p>
+
+    <form id="guestbookForm">
+
+        <div class="form-group">
+            <label for="guestName">Votre nom</label>
+
+            <input
+                type="text"
+                id="guestName"
+                placeholder="Ex. Jean Mukendi"
+                required
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="guestMessage">Votre message</label>
+
+            <textarea
+                id="guestMessage"
+                rows="4"
+                placeholder="Écrivez votre message aux mariés..."
+                required
+            ></textarea>
+        </div>
+
+        <button type="submit" class="guestbook-button">
+            💌 Envoyer mon message
+        </button>
+
+    </form>
+
+    <div id="guestbookMessages"></div>
+
+</section>
+            
         </div>
 
         <div class="form-group">
@@ -1558,6 +1667,30 @@ function closeLightbox() {
     document.getElementById("rsvpForm").reset();
 });
     
+document.getElementById("guestbookForm").addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const name = document.getElementById("guestName").value;
+    const message = document.getElementById("guestMessage").value;
+
+    const messageContainer = document.getElementById("guestbookMessages");
+
+    const newMessage = document.createElement("div");
+
+    newMessage.className = "guest-message";
+
+    newMessage.innerHTML = `
+        <strong>${name}</strong>
+        <p>${message}</p>
+    `;
+
+    messageContainer.prepend(newMessage);
+
+    document.getElementById("guestbookForm").reset();
+
+});
+        
     </script>
 
 

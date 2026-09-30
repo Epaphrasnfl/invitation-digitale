@@ -792,7 +792,91 @@
             }
 
         }
+/* GALERIE */
 
+.gallery {
+    padding: 70px 20px;
+    text-align: center;
+    background: #fff;
+}
+
+.gallery h2 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.gallery > p {
+    color: #777;
+    margin-bottom: 35px;
+}
+
+.gallery-grid {
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.02);
+    opacity: 0.9;
+}
+
+/* LIGHTBOX */
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.lightbox img {
+    max-width: 95%;
+    max-height: 90vh;
+    object-fit: contain;
+}
+
+.lightbox .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 45px;
+    cursor: pointer;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .gallery-grid img {
+        height: 180px;
+    }
+
+    .gallery h2 {
+        font-size: 27px;
+    }
+}
+    
     </style>
 
 </head>
@@ -1128,6 +1212,24 @@
 
     </section>
 
+    <section class="gallery" id="galerie">
+    <h2>Quelques souvenirs</h2>
+    <p>Des instants précieux de notre histoire</p>
+
+    <div class="gallery-grid">
+        <img src="images/couple-principale.jpg" alt="Epaphras et Consolate" onclick="openLightbox(this)">
+        <img src="images/couple-02.jpg" alt="Epaphras et Consolate" onclick="openLightbox(this)">
+        <img src="images/couple-03.jpg" alt="Epaphras et Consolate" onclick="openLightbox(this)">
+        <img src="images/couple-04.jpg" alt="Epaphras et Consolate" onclick="openLightbox(this)">
+        <img src="images/couple-05.jpg" alt="Epaphras et Consolate" onclick="openLightbox(this)">
+    </div>
+</section>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <span class="close">&times;</span>
+    <img id="lightbox-image" src="" alt="Photo agrandie">
+</div>
+
 
     <!-- =====================================================
          JAVASCRIPT
@@ -1247,7 +1349,18 @@
             1000
         );
 
+function openLightbox(image) {
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightbox-image");
 
+    lightboxImage.src = image.src;
+    lightbox.style.display = "flex";
+}
+
+function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+}
+        
     </script>
 
 

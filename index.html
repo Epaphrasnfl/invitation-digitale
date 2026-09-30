@@ -16,51 +16,38 @@
 
     <style>
 
-        /* =========================
-           RESET
-        ========================= */
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-
         html {
             scroll-behavior: smooth;
         }
 
-
         body {
             font-family: Georgia, "Times New Roman", serif;
-
             background: #f7f3ec;
-
             color: #39342e;
-
             overflow-x: hidden;
         }
 
 
-        /* =========================
+        /* =====================================================
            COUVERTURE
-        ========================= */
+        ===================================================== */
 
         .cover {
 
             position: relative;
 
             width: 100%;
-
             height: 100vh;
-
             height: 100svh;
 
             display: flex;
-
             align-items: center;
-
             justify-content: center;
 
             text-align: center;
@@ -75,24 +62,20 @@
                 url("images/couple-principale.jpg");
 
             background-size: cover;
-
             background-position: center;
         }
-
 
         .cover::before {
 
             content: "";
 
             position: absolute;
-
             inset: 0;
 
             background-image:
                 url("images/couple-principale.jpg");
 
             background-size: cover;
-
             background-position: center;
 
             transform: scale(1.04);
@@ -102,13 +85,11 @@
             z-index: 0;
         }
 
-
         .cover::after {
 
             content: "";
 
             position: absolute;
-
             inset: 0;
 
             background:
@@ -123,16 +104,15 @@
         }
 
 
-        /* =========================
+        /* =====================================================
            DÉCORATIONS
-        ========================= */
+        ===================================================== */
 
         .decoration {
 
             position: absolute;
 
             width: 220px;
-
             height: 220px;
 
             border: 1px solid rgba(255,255,255,0.25);
@@ -144,29 +124,21 @@
             z-index: 2;
         }
 
-
         .decoration.one {
-
             top: -120px;
-
             left: -110px;
         }
 
-
         .decoration.two {
-
             bottom: -120px;
-
             right: -110px;
         }
-
 
         .line {
 
             position: absolute;
 
             width: 1px;
-
             height: 70px;
 
             background:
@@ -180,26 +152,20 @@
             z-index: 2;
         }
 
-
         .line.top {
-
             top: 25px;
-
             left: 50%;
         }
-
 
         .line.bottom {
-
             bottom: 25px;
-
             left: 50%;
         }
 
 
-        /* =========================
+        /* =====================================================
            CONTENU COUVERTURE
-        ========================= */
+        ===================================================== */
 
         .cover-content {
 
@@ -210,14 +176,11 @@
             width: min(90%, 600px);
 
             display: flex;
-
             flex-direction: column;
-
             align-items: center;
 
             animation: fadeIn 2s ease forwards;
         }
-
 
         .small-title {
 
@@ -234,7 +197,6 @@
             color: rgba(255,255,255,0.9);
         }
 
-
         .names {
 
             font-size: clamp(48px, 14vw, 82px);
@@ -249,7 +211,6 @@
                 0 3px 20px rgba(0,0,0,0.35);
         }
 
-
         .ampersand {
 
             display: block;
@@ -262,7 +223,6 @@
 
             color: #e2c28b;
         }
-
 
         .date {
 
@@ -278,7 +238,6 @@
 
             color: rgba(255,255,255,0.95);
         }
-
 
         .message {
 
@@ -296,9 +255,9 @@
         }
 
 
-        /* =========================
+        /* =====================================================
            BOUTON
-        ========================= */
+        ===================================================== */
 
         .open-button {
 
@@ -334,7 +293,6 @@
                 box-shadow .3s ease;
         }
 
-
         .open-button:hover {
 
             background: rgba(255,255,255,0.20);
@@ -346,9 +304,9 @@
         }
 
 
-        /* =========================
+        /* =====================================================
            SECTION HISTOIRE
-        ========================= */
+        ===================================================== */
 
         .story {
 
@@ -365,14 +323,12 @@
             justify-content: center;
         }
 
-
         .story-container {
 
             width: min(100%, 850px);
 
             text-align: center;
         }
-
 
         .section-label {
 
@@ -389,7 +345,6 @@
             margin-bottom: 18px;
         }
 
-
         .story-title {
 
             font-size: clamp(38px, 10vw, 58px);
@@ -402,9 +357,9 @@
         }
 
 
-        /* =========================
+        /* =====================================================
            PHOTO HISTOIRE
-        ========================= */
+        ===================================================== */
 
         .story-photo {
 
@@ -414,7 +369,6 @@
 
             position: relative;
         }
-
 
         .story-photo img {
 
@@ -434,7 +388,6 @@
                 0 20px 50px rgba(60,45,25,0.15);
         }
 
-
         .story-photo::after {
 
             content: "";
@@ -442,11 +395,8 @@
             position: absolute;
 
             top: 15px;
-
             left: 15px;
-
             right: -15px;
-
             bottom: -15px;
 
             border: 1px solid rgba(168,137,88,0.35);
@@ -455,9 +405,9 @@
         }
 
 
-        /* =========================
+        /* =====================================================
            TEXTE HISTOIRE
-        ========================= */
+        ===================================================== */
 
         .story-text {
 
@@ -471,7 +421,6 @@
 
             color: #6e655b;
         }
-
 
         .story-date {
 
@@ -489,9 +438,9 @@
         }
 
 
-        /* =========================
+        /* =====================================================
            COMPTE À REBOURS
-        ========================= */
+        ===================================================== */
 
         .countdown {
 
@@ -502,7 +451,6 @@
             border-top: 1px solid rgba(168,137,88,0.25);
         }
 
-
         .countdown-title {
 
             font-size: 24px;
@@ -511,7 +459,6 @@
 
             margin-bottom: 30px;
         }
-
 
         .countdown-grid {
 
@@ -527,7 +474,6 @@
             margin: auto;
         }
 
-
         .count-box {
 
             padding: 20px 8px;
@@ -540,7 +486,6 @@
                 0 10px 25px rgba(60,45,25,0.06);
         }
 
-
         .count-number {
 
             display: block;
@@ -549,7 +494,6 @@
 
             color: #39342e;
         }
-
 
         .count-label {
 
@@ -569,9 +513,205 @@
         }
 
 
-        /* =========================
+        /* =====================================================
+           PROGRAMME
+        ===================================================== */
+
+        .program {
+
+            position: relative;
+
+            padding: 100px 22px;
+
+            background: #eee8de;
+
+            text-align: center;
+        }
+
+        .program-container {
+
+            width: min(100%, 900px);
+
+            margin: auto;
+        }
+
+        .program-title {
+
+            font-size: clamp(38px, 10vw, 58px);
+
+            font-weight: normal;
+
+            margin-bottom: 15px;
+
+            color: #39342e;
+        }
+
+        .program-intro {
+
+            max-width: 550px;
+
+            margin: 0 auto 55px;
+
+            font-size: 16px;
+
+            line-height: 1.8;
+
+            color: #71685d;
+        }
+
+
+        /* =====================================================
+           CARTES ÉVÉNEMENTS
+        ===================================================== */
+
+        .events {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 25px;
+
+            max-width: 800px;
+
+            margin: auto;
+        }
+
+        .event-card {
+
+            position: relative;
+
+            padding: 45px 28px;
+
+            background: #fdfbf7;
+
+            border: 1px solid rgba(168,137,88,0.22);
+
+            box-shadow:
+                0 15px 35px rgba(60,45,25,0.07);
+
+            transition:
+                transform .3s ease,
+                box-shadow .3s ease;
+        }
+
+        .event-card:hover {
+
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 20px 45px rgba(60,45,25,0.12);
+        }
+
+        .event-icon {
+
+            font-size: 30px;
+
+            margin-bottom: 20px;
+        }
+
+        .event-type {
+
+            font-family: Arial, sans-serif;
+
+            font-size: 10px;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            color: #a88958;
+
+            margin-bottom: 15px;
+        }
+
+        .event-name {
+
+            font-size: 28px;
+
+            font-weight: normal;
+
+            margin-bottom: 25px;
+
+            color: #39342e;
+        }
+
+        .event-time {
+
+            font-family: Arial, sans-serif;
+
+            font-size: 13px;
+
+            letter-spacing: 2px;
+
+            color: #6f665c;
+
+            margin-bottom: 18px;
+        }
+
+        .event-place {
+
+            font-size: 16px;
+
+            line-height: 1.7;
+
+            color: #39342e;
+
+            margin-bottom: 8px;
+        }
+
+        .event-address {
+
+            font-family: Arial, sans-serif;
+
+            font-size: 12px;
+
+            line-height: 1.6;
+
+            color: #8b8175;
+
+            margin-bottom: 28px;
+        }
+
+        .map-button {
+
+            display: inline-block;
+
+            padding: 12px 22px;
+
+            border: 1px solid #a88958;
+
+            border-radius: 30px;
+
+            color: #725b38;
+
+            text-decoration: none;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 10px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            transition:
+                background .3s ease,
+                color .3s ease;
+        }
+
+        .map-button:hover {
+
+            background: #a88958;
+
+            color: white;
+        }
+
+
+        /* =====================================================
            ANIMATIONS
-        ========================= */
+        ===================================================== */
 
         @keyframes fadeIn {
 
@@ -583,7 +723,6 @@
                 opacity: 1;
             }
         }
-
 
         @keyframes zoomPhoto {
 
@@ -597,47 +736,59 @@
         }
 
 
-        /* =========================
+        /* =====================================================
            MOBILE
-        ========================= */
+        ===================================================== */
 
-        @media (max-width: 600px) {
+        @media (max-width: 650px) {
 
             .story {
 
                 padding: 75px 18px;
             }
 
-
             .story-text {
 
                 font-size: 15px;
             }
-
 
             .countdown-grid {
 
                 gap: 7px;
             }
 
-
             .count-box {
 
                 padding: 15px 5px;
             }
-
 
             .count-number {
 
                 font-size: 25px;
             }
 
-
             .count-label {
 
                 font-size: 8px;
 
                 letter-spacing: 1px;
+            }
+
+            .program {
+
+                padding: 75px 18px;
+            }
+
+            .events {
+
+                grid-template-columns: 1fr;
+
+                gap: 20px;
+            }
+
+            .event-card {
+
+                padding: 40px 22px;
             }
 
         }
@@ -650,9 +801,9 @@
 <body>
 
 
-    <!-- =========================
+    <!-- =====================================================
          COUVERTURE
-    ========================= -->
+    ===================================================== -->
 
     <section class="cover" id="accueil">
 
@@ -714,9 +865,9 @@
     </section>
 
 
-    <!-- =========================
+    <!-- =====================================================
          NOTRE HISTOIRE
-    ========================= -->
+    ===================================================== -->
 
     <section class="story" id="histoire">
 
@@ -847,11 +998,147 @@
     </section>
 
 
+    <!-- =====================================================
+         PROGRAMME DU MARIAGE
+    ===================================================== -->
+
+    <section class="program" id="programme">
+
+        <div class="program-container">
+
+
+            <p class="section-label">
+                Le grand jour
+            </p>
+
+
+            <h2 class="program-title">
+                Programme
+            </h2>
+
+
+            <p class="program-intro">
+
+                Deux moments importants pour célébrer
+                notre union avec vous.
+
+            </p>
+
+
+            <div class="events">
+
+
+                <!-- BÉNÉDICTION NUPTIALE -->
+
+                <article class="event-card">
+
+                    <div class="event-icon">
+                        💍
+                    </div>
+
+
+                    <p class="event-type">
+                        Première étape
+                    </p>
+
+
+                    <h3 class="event-name">
+                        Bénédiction nuptiale
+                    </h3>
+
+
+                    <p class="event-time">
+                        14h00
+                    </p>
+
+
+                    <p class="event-place">
+                        Église de démonstration
+                    </p>
+
+
+                    <p class="event-address">
+                        Avenue de la Paix,
+                        Kinshasa, RDC
+                    </p>
+
+
+                    <a
+                        class="map-button"
+                        href="https://www.google.com/maps/search/?api=1&query=Kinshasa"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        Voir l'itinéraire
+                    </a>
+
+                </article>
+
+
+                <!-- SOIRÉE -->
+
+                <article class="event-card">
+
+                    <div class="event-icon">
+                        🥂
+                    </div>
+
+
+                    <p class="event-type">
+                        Deuxième étape
+                    </p>
+
+
+                    <h3 class="event-name">
+                        Soirée dansante
+                    </h3>
+
+
+                    <p class="event-time">
+                        19h00
+                    </p>
+
+
+                    <p class="event-place">
+                        Salle de réception
+                    </p>
+
+
+                    <p class="event-address">
+                        Boulevard du Mariage,
+                        Kinshasa, RDC
+                    </p>
+
+
+                    <a
+                        class="map-button"
+                        href="https://www.google.com/maps/search/?api=1&query=Kinshasa"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        Voir l'itinéraire
+                    </a>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ===================================================== -->
+
     <script>
 
-        /* =========================
+
+        /* =====================================================
            OUVRIR L'INVITATION
-        ========================= */
+        ===================================================== */
 
         function ouvrirInvitation() {
 
@@ -864,12 +1151,14 @@
         }
 
 
-        /* =========================
+        /* =====================================================
            COMPTE À REBOURS
-        ========================= */
+        ===================================================== */
 
         const dateMariage =
-            new Date("June 6, 2027 00:00:00").getTime();
+            new Date(
+                "June 6, 2027 00:00:00"
+            ).getTime();
 
 
         function actualiserCompteARebours() {
@@ -893,6 +1182,7 @@
                 document.getElementById("seconds").textContent = "0";
 
                 return;
+
             }
 
 
@@ -945,6 +1235,7 @@
             document.getElementById("seconds")
                 .textContent = secondes;
 
+
         }
 
 
@@ -955,6 +1246,7 @@
             actualiserCompteARebours,
             1000
         );
+
 
     </script>
 

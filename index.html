@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Epaphras & Consolate — 06 Juin 2027</title>
 
-    <meta name="description" content="Invitation au mariage de Epaphras & Consolate — 06 Juin 2027">
+    <meta
+        name="description"
+        content="Invitation au mariage de Epaphras & Consolate"
+    >
 
     <style>
+
+        /* =========================
+           RESET
+        ========================= */
 
         * {
             margin: 0;
@@ -16,31 +26,41 @@
             box-sizing: border-box;
         }
 
-        html,
-        body {
-            width: 100%;
-            height: 100%;
+
+        html {
+            scroll-behavior: smooth;
         }
+
 
         body {
             font-family: Georgia, "Times New Roman", serif;
-            background: #111;
-            color: white;
-            overflow: hidden;
+
+            background: #f7f3ec;
+
+            color: #39342e;
+
+            overflow-x: hidden;
         }
+
 
         /* =========================
            COUVERTURE
         ========================= */
 
         .cover {
+
             position: relative;
+
             width: 100%;
+
             height: 100vh;
+
             height: 100svh;
 
             display: flex;
+
             align-items: center;
+
             justify-content: center;
 
             text-align: center;
@@ -49,24 +69,30 @@
 
             background-image:
                 linear-gradient(
-                    rgba(20, 15, 10, 0.42),
-                    rgba(20, 15, 10, 0.58)
+                    rgba(20, 15, 10, 0.38),
+                    rgba(20, 15, 10, 0.60)
                 ),
                 url("images/couple-principale.jpg");
 
             background-size: cover;
+
             background-position: center;
         }
 
-        /* Léger effet de zoom */
 
         .cover::before {
+
             content: "";
+
             position: absolute;
+
             inset: 0;
 
-            background-image: url("images/couple-principale.jpg");
+            background-image:
+                url("images/couple-principale.jpg");
+
             background-size: cover;
+
             background-position: center;
 
             transform: scale(1.04);
@@ -76,17 +102,19 @@
             z-index: 0;
         }
 
-        /* Voile par-dessus la photo */
 
         .cover::after {
+
             content: "";
+
             position: absolute;
+
             inset: 0;
 
             background:
                 linear-gradient(
                     to bottom,
-                    rgba(0,0,0,0.15),
+                    rgba(0,0,0,0.10),
                     rgba(0,0,0,0.25) 45%,
                     rgba(0,0,0,0.65)
                 );
@@ -94,13 +122,17 @@
             z-index: 1;
         }
 
+
         /* =========================
            DÉCORATIONS
         ========================= */
 
         .decoration {
+
             position: absolute;
+
             width: 220px;
+
             height: 220px;
 
             border: 1px solid rgba(255,255,255,0.25);
@@ -112,20 +144,29 @@
             z-index: 2;
         }
 
+
         .decoration.one {
+
             top: -120px;
+
             left: -110px;
         }
 
+
         .decoration.two {
+
             bottom: -120px;
+
             right: -110px;
         }
 
+
         .line {
+
             position: absolute;
 
             width: 1px;
+
             height: 70px;
 
             background:
@@ -139,21 +180,29 @@
             z-index: 2;
         }
 
+
         .line.top {
+
             top: 25px;
+
             left: 50%;
         }
+
 
         .line.bottom {
+
             bottom: 25px;
+
             left: 50%;
         }
 
+
         /* =========================
-           CONTENU
+           CONTENU COUVERTURE
         ========================= */
 
-        .content {
+        .cover-content {
+
             position: relative;
 
             z-index: 3;
@@ -161,13 +210,17 @@
             width: min(90%, 600px);
 
             display: flex;
+
             flex-direction: column;
+
             align-items: center;
 
             animation: fadeIn 2s ease forwards;
         }
 
+
         .small-title {
+
             font-family: Arial, sans-serif;
 
             font-size: 11px;
@@ -179,33 +232,29 @@
             margin-bottom: 28px;
 
             color: rgba(255,255,255,0.9);
-
-            animation: slideDown 1.2s ease forwards;
         }
 
+
         .names {
+
             font-size: clamp(48px, 14vw, 82px);
 
             font-weight: normal;
 
             line-height: 0.95;
 
-            letter-spacing: -2px;
-
             color: white;
 
             text-shadow:
                 0 3px 20px rgba(0,0,0,0.35);
-
-            animation: fadeUp 1.5s ease .2s both;
         }
 
+
         .ampersand {
+
             display: block;
 
             margin: 12px 0;
-
-            font-family: "Times New Roman", serif;
 
             font-size: clamp(28px, 8vw, 42px);
 
@@ -214,7 +263,9 @@
             color: #e2c28b;
         }
 
+
         .date {
+
             margin-top: 32px;
 
             font-family: Arial, sans-serif;
@@ -226,11 +277,11 @@
             text-transform: uppercase;
 
             color: rgba(255,255,255,0.95);
-
-            animation: fadeUp 1.5s ease .5s both;
         }
 
+
         .message {
+
             max-width: 390px;
 
             margin-top: 25px;
@@ -242,19 +293,14 @@
             font-style: italic;
 
             color: rgba(255,255,255,0.9);
-
-            text-shadow:
-                0 2px 10px rgba(0,0,0,0.4);
-
-            animation: fadeUp 1.5s ease .7s both;
         }
+
 
         /* =========================
            BOUTON
         ========================= */
 
         .open-button {
-            position: relative;
 
             margin-top: 38px;
 
@@ -286,12 +332,12 @@
                 background .3s ease,
                 transform .3s ease,
                 box-shadow .3s ease;
-
-            animation: fadeUp 1.5s ease .9s both;
         }
 
+
         .open-button:hover {
-            background: rgba(255,255,255,0.2);
+
+            background: rgba(255,255,255,0.20);
 
             transform: translateY(-3px);
 
@@ -299,41 +345,229 @@
                 0 10px 30px rgba(0,0,0,0.3);
         }
 
-        .open-button:active {
-            transform: translateY(0);
-        }
 
         /* =========================
-           INDICATION BAS
+           SECTION HISTOIRE
         ========================= */
 
-        .scroll-hint {
-            position: absolute;
+        .story {
 
-            bottom: 22px;
+            position: relative;
 
-            left: 50%;
+            min-height: 100vh;
 
-            transform: translateX(-50%);
+            padding: 90px 22px;
 
-            z-index: 3;
+            background: #f7f3ec;
+
+            display: flex;
+
+            justify-content: center;
+        }
+
+
+        .story-container {
+
+            width: min(100%, 850px);
+
+            text-align: center;
+        }
+
+
+        .section-label {
 
             font-family: Arial, sans-serif;
 
-            font-size: 9px;
+            font-size: 10px;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            color: #a88958;
+
+            margin-bottom: 18px;
+        }
+
+
+        .story-title {
+
+            font-size: clamp(38px, 10vw, 58px);
+
+            font-weight: normal;
+
+            color: #39342e;
+
+            margin-bottom: 35px;
+        }
+
+
+        /* =========================
+           PHOTO HISTOIRE
+        ========================= */
+
+        .story-photo {
+
+            width: min(100%, 560px);
+
+            margin: 0 auto 40px;
+
+            position: relative;
+        }
+
+
+        .story-photo img {
+
+            display: block;
+
+            width: 100%;
+
+            height: auto;
+
+            max-height: 650px;
+
+            object-fit: cover;
+
+            border-radius: 2px;
+
+            box-shadow:
+                0 20px 50px rgba(60,45,25,0.15);
+        }
+
+
+        .story-photo::after {
+
+            content: "";
+
+            position: absolute;
+
+            top: 15px;
+
+            left: 15px;
+
+            right: -15px;
+
+            bottom: -15px;
+
+            border: 1px solid rgba(168,137,88,0.35);
+
+            z-index: -1;
+        }
+
+
+        /* =========================
+           TEXTE HISTOIRE
+        ========================= */
+
+        .story-text {
+
+            max-width: 650px;
+
+            margin: 0 auto;
+
+            font-size: 17px;
+
+            line-height: 1.9;
+
+            color: #6e655b;
+        }
+
+
+        .story-date {
+
+            margin-top: 35px;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 12px;
 
             letter-spacing: 3px;
 
             text-transform: uppercase;
 
-            color: rgba(255,255,255,0.7);
-
-            opacity: 0;
-
-            animation:
-                fadeIn 1s ease 2s forwards,
-                pulse 2.5s ease-in-out 2.5s infinite;
+            color: #8f7650;
         }
+
+
+        /* =========================
+           COMPTE À REBOURS
+        ========================= */
+
+        .countdown {
+
+            margin-top: 65px;
+
+            padding-top: 50px;
+
+            border-top: 1px solid rgba(168,137,88,0.25);
+        }
+
+
+        .countdown-title {
+
+            font-size: 24px;
+
+            font-weight: normal;
+
+            margin-bottom: 30px;
+        }
+
+
+        .countdown-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 12px;
+
+            max-width: 600px;
+
+            margin: auto;
+        }
+
+
+        .count-box {
+
+            padding: 20px 8px;
+
+            background: white;
+
+            border: 1px solid rgba(168,137,88,0.15);
+
+            box-shadow:
+                0 10px 25px rgba(60,45,25,0.06);
+        }
+
+
+        .count-number {
+
+            display: block;
+
+            font-size: 32px;
+
+            color: #39342e;
+        }
+
+
+        .count-label {
+
+            display: block;
+
+            margin-top: 6px;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 9px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            color: #9a8c79;
+        }
+
 
         /* =========================
            ANIMATIONS
@@ -348,53 +582,8 @@
             to {
                 opacity: 1;
             }
-
         }
 
-        @keyframes fadeUp {
-
-            from {
-                opacity: 0;
-
-                transform: translateY(25px);
-            }
-
-            to {
-                opacity: 1;
-
-                transform: translateY(0);
-            }
-
-        }
-
-        @keyframes slideDown {
-
-            from {
-                opacity: 0;
-
-                transform: translateY(-20px);
-            }
-
-            to {
-                opacity: 1;
-
-                transform: translateY(0);
-            }
-
-        }
-
-        @keyframes pulse {
-
-            0%,
-            100% {
-                opacity: .4;
-            }
-
-            50% {
-                opacity: 1;
-            }
-
-        }
 
         @keyframes zoomPhoto {
 
@@ -405,62 +594,67 @@
             to {
                 transform: scale(1.12);
             }
-
         }
+
 
         /* =========================
            MOBILE
         ========================= */
 
-        @media (max-width: 480px) {
+        @media (max-width: 600px) {
 
-            .small-title {
-                font-size: 9px;
+            .story {
 
-                letter-spacing: 4px;
-
-                margin-bottom: 24px;
+                padding: 75px 18px;
             }
 
-            .names {
-                font-size: 50px;
+
+            .story-text {
+
+                font-size: 15px;
             }
 
-            .ampersand {
-                font-size: 30px;
 
-                margin: 10px 0;
+            .countdown-grid {
+
+                gap: 7px;
             }
 
-            .date {
-                font-size: 11px;
 
-                letter-spacing: 3px;
+            .count-box {
 
-                margin-top: 25px;
+                padding: 15px 5px;
             }
 
-            .message {
-                font-size: 14px;
 
-                max-width: 300px;
+            .count-number {
+
+                font-size: 25px;
             }
 
-            .open-button {
-                padding: 14px 27px;
 
-                font-size: 10px;
+            .count-label {
+
+                font-size: 8px;
+
+                letter-spacing: 1px;
             }
 
         }
 
     </style>
+
 </head>
 
 
 <body>
 
-    <main class="cover">
+
+    <!-- =========================
+         COUVERTURE
+    ========================= -->
+
+    <section class="cover" id="accueil">
 
         <div class="decoration one"></div>
 
@@ -471,7 +665,7 @@
         <div class="line bottom"></div>
 
 
-        <section class="content">
+        <div class="cover-content">
 
             <p class="small-title">
                 Vous êtes invités
@@ -515,27 +709,255 @@
 
             </button>
 
-        </section>
+        </div>
+
+    </section>
 
 
-        <p class="scroll-hint">
-            Une histoire commence
-        </p>
+    <!-- =========================
+         NOTRE HISTOIRE
+    ========================= -->
 
-    </main>
+    <section class="story" id="histoire">
+
+        <div class="story-container">
+
+            <p class="section-label">
+                Notre histoire
+            </p>
+
+
+            <h2 class="story-title">
+                Une histoire à deux
+            </h2>
+
+
+            <div class="story-photo">
+
+                <img
+                    src="images/couple-02.jpg"
+                    alt="Epaphras et Consolate"
+                >
+
+            </div>
+
+
+            <p class="story-text">
+
+                Deux chemins qui se rencontrent.
+                Deux histoires qui deviennent une seule.
+                Et aujourd'hui, une nouvelle page
+                que nous sommes heureux d'écrire ensemble.
+
+                <br><br>
+
+                Nous avons choisi de nous dire oui
+                et de célébrer ce moment entourés
+                de ceux qui comptent pour nous.
+
+            </p>
+
+
+            <p class="story-date">
+                Notre grand jour — 06 Juin 2027
+            </p>
+
+
+            <!-- COMPTE À REBOURS -->
+
+            <div class="countdown">
+
+                <h3 class="countdown-title">
+                    Le grand jour approche...
+                </h3>
+
+
+                <div class="countdown-grid">
+
+
+                    <div class="count-box">
+
+                        <span
+                            class="count-number"
+                            id="days"
+                        >
+                            0
+                        </span>
+
+                        <span class="count-label">
+                            Jours
+                        </span>
+
+                    </div>
+
+
+                    <div class="count-box">
+
+                        <span
+                            class="count-number"
+                            id="hours"
+                        >
+                            0
+                        </span>
+
+                        <span class="count-label">
+                            Heures
+                        </span>
+
+                    </div>
+
+
+                    <div class="count-box">
+
+                        <span
+                            class="count-number"
+                            id="minutes"
+                        >
+                            0
+                        </span>
+
+                        <span class="count-label">
+                            Minutes
+                        </span>
+
+                    </div>
+
+
+                    <div class="count-box">
+
+                        <span
+                            class="count-number"
+                            id="seconds"
+                        >
+                            0
+                        </span>
+
+                        <span class="count-label">
+                            Secondes
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
 
 
     <script>
 
+        /* =========================
+           OUVRIR L'INVITATION
+        ========================= */
+
         function ouvrirInvitation() {
 
-            alert(
-                "Bienvenue dans l'invitation de Epaphras & Consolate ❤️"
-            );
+            document
+                .getElementById("histoire")
+                .scrollIntoView({
+                    behavior: "smooth"
+                });
 
         }
 
+
+        /* =========================
+           COMPTE À REBOURS
+        ========================= */
+
+        const dateMariage =
+            new Date("June 6, 2027 00:00:00").getTime();
+
+
+        function actualiserCompteARebours() {
+
+            const maintenant =
+                new Date().getTime();
+
+
+            const distance =
+                dateMariage - maintenant;
+
+
+            if (distance <= 0) {
+
+                document.getElementById("days").textContent = "0";
+
+                document.getElementById("hours").textContent = "0";
+
+                document.getElementById("minutes").textContent = "0";
+
+                document.getElementById("seconds").textContent = "0";
+
+                return;
+            }
+
+
+            const jours =
+                Math.floor(
+                    distance /
+                    (1000 * 60 * 60 * 24)
+                );
+
+
+            const heures =
+                Math.floor(
+                    (distance %
+                        (1000 * 60 * 60 * 24))
+                    /
+                    (1000 * 60 * 60)
+                );
+
+
+            const minutes =
+                Math.floor(
+                    (distance %
+                        (1000 * 60 * 60))
+                    /
+                    (1000 * 60)
+                );
+
+
+            const secondes =
+                Math.floor(
+                    (distance %
+                        (1000 * 60))
+                    /
+                    1000
+                );
+
+
+            document.getElementById("days")
+                .textContent = jours;
+
+
+            document.getElementById("hours")
+                .textContent = heures;
+
+
+            document.getElementById("minutes")
+                .textContent = minutes;
+
+
+            document.getElementById("seconds")
+                .textContent = secondes;
+
+        }
+
+
+        actualiserCompteARebours();
+
+
+        setInterval(
+            actualiserCompteARebours,
+            1000
+        );
+
     </script>
+
 
 </body>
 

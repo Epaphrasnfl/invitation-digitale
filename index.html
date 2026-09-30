@@ -877,6 +877,93 @@
     }
 }
     
+   /* RSVP */
+
+.rsvp {
+    padding: 70px 20px;
+    background: #f8f6f2;
+    text-align: center;
+}
+
+.rsvp h2 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.rsvp > p {
+    color: #777;
+    margin-bottom: 35px;
+}
+
+#rsvpForm {
+    max-width: 600px;
+    margin: auto;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.radio-group {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.radio-group label {
+    font-weight: normal;
+}
+
+.radio-group input {
+    width: auto;
+    margin-right: 6px;
+}
+
+.rsvp-button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background: #222;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.rsvp-button:hover {
+    opacity: 0.85;
+}
+
+#rsvpMessage {
+    margin-top: 20px;
+    font-weight: 600;
+}
+    
     </style>
 
 </head>
@@ -1225,6 +1312,105 @@
     </div>
 </section>
 
+    <section class="rsvp" id="rsvp">
+    <h2>Confirmez votre présence</h2>
+    <p>Nous serions heureux de vous compter parmi nous.</p>
+
+    <form id="rsvpForm">
+
+        <div class="form-group">
+            <label for="nom">Nom et prénom</label>
+            <input 
+                type="text" 
+                id="nom" 
+                name="nom" 
+                placeholder="Ex. Jean Mukendi"
+                required
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="telephone">Numéro de téléphone</label>
+            <input 
+                type="tel" 
+                id="telephone" 
+                name="telephone" 
+                placeholder="+243 ..."
+                required
+            >
+        </div>
+
+        <div class="form-group">
+            <label>Confirmez votre présence</label>
+
+            <div class="radio-group">
+                <label>
+                    <input 
+                        type="radio" 
+                        name="presence" 
+                        value="present"
+                        required
+                    >
+                    Je serai présent(e)
+                </label>
+
+                <label>
+                    <input 
+                        type="radio" 
+                        name="presence" 
+                        value="absent"
+                    >
+                    Je ne pourrai pas venir
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="nombre">Nombre de personnes</label>
+
+            <select id="nombre" name="nombre" required>
+                <option value="">Sélectionnez</option>
+                <option value="1">1 personne</option>
+                <option value="2">2 personnes</option>
+                <option value="3">3 personnes</option>
+                <option value="4">4 personnes</option>
+                <option value="5">5 personnes</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="boisson">Choix de boisson</label>
+
+            <select id="boisson" name="boisson">
+                <option value="">Sélectionnez</option>
+                <option value="jus">Jus</option>
+                <option value="eau">Eau</option>
+                <option value="vin">Vin</option>
+                <option value="champagne">Champagne</option>
+                <option value="autre">Autre</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="message">Un petit mot pour les mariés</label>
+
+            <textarea 
+                id="message" 
+                name="message" 
+                rows="4"
+                placeholder="Écrivez votre message..."
+            ></textarea>
+        </div>
+
+        <button type="submit" class="rsvp-button">
+            Confirmer ma présence
+        </button>
+
+    </form>
+
+    <div id="rsvpMessage"></div>
+</section>
+
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
     <span class="close">&times;</span>
     <img id="lightbox-image" src="" alt="Photo agrandie">
@@ -1361,6 +1547,17 @@ function closeLightbox() {
     document.getElementById("lightbox").style.display = "none";
 }
         
+ document.getElementById("rsvpForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const nom = document.getElementById("nom").value;
+
+    document.getElementById("rsvpMessage").innerHTML =
+        "Merci " + nom + " ! Votre confirmation a bien été enregistrée pour cette démonstration.";
+
+    document.getElementById("rsvpForm").reset();
+});
+    
     </script>
 
 

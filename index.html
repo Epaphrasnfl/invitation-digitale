@@ -1750,6 +1750,27 @@ const guestSlug = guestParts.join("-");
 
 console.log("Slug de l'invité :", guestSlug);
 console.log("Code de l'invité :", publicCode);
+
+// Récupérer les informations de l'invité depuis Supabase
+async function chargerInvite() {
+    const { data, error } = await supabaseClient.rpc(
+        "get_guest_invitation",
+        {
+            p_invitation_slug: invitationSlug,
+            p_guest_slug: guestSlug,
+            p_public_code: publicCode
+        }
+    );
+
+    if (error) {
+        console.error("Erreur lors de la récupération de l'invité :", error);
+        return;
+    }
+
+    console.log("Informations de l'invité :", data);
+}
+
+chargerInvite();
     
 </script>
 

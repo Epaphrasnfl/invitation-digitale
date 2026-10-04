@@ -1741,6 +1741,15 @@ const guestIdentifier = pathParts[2];
 
 console.log("Invitation :", invitationSlug);
 console.log("Invité :", guestIdentifier);
+
+// Séparer le nom de l'invité et son code
+const guestParts = guestIdentifier.split("-");
+
+const publicCode = guestParts.pop();
+const guestSlug = guestParts.join("-");
+
+console.log("Slug de l'invité :", guestSlug);
+console.log("Code de l'invité :", publicCode);
     
 </script>
 

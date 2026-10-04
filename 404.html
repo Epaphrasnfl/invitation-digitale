@@ -1,1 +1,19 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Invitation</title>
+</head>
+<body>
 
+<script>
+    sessionStorage.setItem(
+        "redirectPath",
+        location.pathname + location.search + location.hash
+    );
+
+    location.replace("/invitation-digitale/");
+</script>
+
+</body>
+</html>

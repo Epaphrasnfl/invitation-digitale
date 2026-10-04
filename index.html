@@ -1768,6 +1768,19 @@ async function chargerInvite() {
     }
 
     console.log("Informations de l'invité :", data);
+    const invite = data[0];
+
+if (invite) {
+    const nomInput = document.getElementById("nom");
+
+    if (nomInput) {
+        nomInput.value = invite.guest_name;
+        nomInput.readOnly = true;
+    }
+
+    console.log("Nom de l'invité chargé :", invite.guest_name);
+    console.log("Nombre de personnes autorisées :", invite.allowed_guests);
+}
 }
 
 chargerInvite();

@@ -1757,6 +1757,8 @@ if (guestbookForm) {
         SUPABASE_KEY
     );
 
+    let invite = null;
+
     console.log("Supabase connecté");
 // Récupérer l'URL originale après le passage par 404.html
 const savedPath = sessionStorage.getItem("redirectPath");
@@ -1809,7 +1811,7 @@ async function chargerInvite() {
     }
 
     console.log("Informations de l'invité :", data);
-    const invite = data[0];
+    invite = data[0];
 
 if (invite) {
     const nomInput = document.getElementById("nom");

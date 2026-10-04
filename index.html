@@ -1710,6 +1710,17 @@ if (savedPath) {
     sessionStorage.removeItem("redirectPath");
     history.replaceState({}, "", savedPath);
 }
+
+// Récupérer les informations de l'invité depuis l'URL
+const currentPath = window.location.pathname;
+
+const pathParts = currentPath
+    .split("/")
+    .filter(part => part !== "");
+
+console.log("URL de l'invitation :", currentPath);
+console.log("Éléments de l'URL :", pathParts);
+    
 </script>
 
 </body>

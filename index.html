@@ -1656,19 +1656,60 @@ function closeLightbox() {
  const rsvpForm = document.getElementById("rsvpForm");
 
 if (rsvpForm) {
-    rsvpForm.addEventListener("submit", function(event) {
+    rsvpForm.addEventListener("submit", async function(event) {
         event.preventDefault();
 
         const nom = document.getElementById("nom").value;
+        const telephone = document.getElementById("telephone").value;
+        const presence = document.querySelector('input[name="presence"]:checked')?.value;
+        const nombre = document.getElementById("nombre").value;
 
         const rsvpMessage = document.getElementById("rsvpMessage");
 
+        // Vérifier que l'invité a bien été chargé
+        if (!invite || !invite.guest_id) {
+            console.error("Invité non identifié.");
+            return;
+        }
+
+        const { data, error } = await supabaseClient.rpc(
+            "submit_rsvp",
+            {
+                p_guest_id: invite.guest_id,
+                p_attendance: presence,
+                p_guest_count: Number(nombre),
+                p_drink_choice: null,
+                p_phone: telephone
+            }
+        );
+
+        if (error) {
+            console.error("Erreur lors de l'enregistrement du RSVP :", error);
+
+            if (rsvpMessage) {
+                rsvpMessage.innerHTML =
+                    "Une erreur est survenue. Veuillez réessayer.";
+            }
+
+            return;
+        }
+
+        console.log("RSVP enregistré :", data);
+
         if (rsvpMessage) {
             rsvpMessage.innerHTML =
-                "Merci " + nom + " ! Votre confirmation a bien été enregistrée pour cette démonstration.";
+                "Merci " + nom + " ! Votre confirmation a bien été enregistrée.";
         }
 
         rsvpForm.reset();
+
+        // Remettre automatiquement le nom de l'invité après reset
+        const nomInput = document.getElementById("nom");
+
+        if (nomInput) {
+            nomInput.value = invite.guest_name;
+            nomInput.readOnly = true;
+        }
     });
 }
 

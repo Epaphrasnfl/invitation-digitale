@@ -1706,6 +1706,13 @@ document.getElementById("guestbookForm").addEventListener("submit", function(eve
     );
 
     console.log("Supabase connecté");
+// Récupérer l'URL originale après le passage par 404.html
+const savedPath = sessionStorage.getItem("redirectPath");
+
+if (savedPath) {
+    sessionStorage.removeItem("redirectPath");
+    history.replaceState({}, "", savedPath);
+}
 </script>
 
 </body>

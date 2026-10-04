@@ -1653,40 +1653,54 @@ function closeLightbox() {
     document.getElementById("lightbox").style.display = "none";
 }
         
- document.getElementById("rsvpForm").addEventListener("submit", function(event) {
-    event.preventDefault();
+ const rsvpForm = document.getElementById("rsvpForm");
 
-    const nom = document.getElementById("nom").value;
+if (rsvpForm) {
+    rsvpForm.addEventListener("submit", function(event) {
+        event.preventDefault();
 
-    document.getElementById("rsvpMessage").innerHTML =
-        "Merci " + nom + " ! Votre confirmation a bien été enregistrée pour cette démonstration.";
+        const nom = document.getElementById("nom").value;
 
-    document.getElementById("rsvpForm").reset();
-});
-    
-document.getElementById("guestbookForm").addEventListener("submit", function(event) {
+        const rsvpMessage = document.getElementById("rsvpMessage");
 
-    event.preventDefault();
+        if (rsvpMessage) {
+            rsvpMessage.innerHTML =
+                "Merci " + nom + " ! Votre confirmation a bien été enregistrée pour cette démonstration.";
+        }
 
-    const name = document.getElementById("guestName").value;
-    const message = document.getElementById("guestMessage").value;
+        rsvpForm.reset();
+    });
+}
 
-    const messageContainer = document.getElementById("guestbookMessages");
 
-    const newMessage = document.createElement("div");
+const guestbookForm = document.getElementById("guestbookForm");
 
-    newMessage.className = "guest-message";
+if (guestbookForm) {
+    guestbookForm.addEventListener("submit", function(event) {
 
-    newMessage.innerHTML = `
-        <strong>${name}</strong>
-        <p>${message}</p>
-    `;
+        event.preventDefault();
 
-    messageContainer.prepend(newMessage);
+        const name = document.getElementById("guestName").value;
+        const message = document.getElementById("guestMessage").value;
 
-    document.getElementById("guestbookForm").reset();
+        const messageContainer = document.getElementById("guestbookMessages");
 
-});
+        if (messageContainer) {
+            const newMessage = document.createElement("div");
+
+            newMessage.className = "guest-message";
+
+            newMessage.innerHTML = `
+                <strong>${name}</strong>
+                <p>${message}</p>
+            `;
+
+            messageContainer.prepend(newMessage);
+        }
+
+        guestbookForm.reset();
+    });
+}
         
     </script>
 

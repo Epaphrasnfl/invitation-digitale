@@ -1673,15 +1673,16 @@ if (rsvpForm) {
         }
 
         const { data, error } = await supabaseClient.rpc(
-            "submit_rsvp",
-            {
-                p_guest_id: invite.guest_id,
-                p_attendance: presence,
-                p_guest_count: Number(nombre),
-                p_drink_choice: null,
-                p_phone: telephone
-            }
-        );
+    "submit_rsvp",
+    {
+        p_invitation_slug: invitationSlug,
+        p_guest_slug: guestSlug,
+        p_public_code: publicCode,
+        p_attendance: presence,
+        p_guest_count: Number(nombre),
+        p_drink_choice: null
+    }
+);
 
         if (error) {
             console.error("Erreur lors de l'enregistrement du RSVP :", error);

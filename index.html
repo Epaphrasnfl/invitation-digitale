@@ -1734,6 +1734,13 @@ const pathParts = currentPath
 
 console.log("URL de l'invitation :", currentPath);
 console.log("Éléments de l'URL :", pathParts);
+
+// Identifier l'invitation et l'invité depuis l'URL
+const invitationSlug = pathParts[1];
+const guestIdentifier = pathParts[2];
+
+console.log("Invitation :", invitationSlug);
+console.log("Invité :", guestIdentifier);
     
 </script>
 
